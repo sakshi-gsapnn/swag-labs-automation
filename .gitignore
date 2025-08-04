@@ -1,0 +1,69 @@
+# Build output
+target/
+out/
+ 
+# Project dependency caches
+.mvn/
+dependency-reduced-pom.xml
+release.properties
+ 
+# Compiled class files
+*.class
+ 
+# Log files
+*.log
+ 
+# Local environment files (optional)
+.env
+ 
+# IDE-specific (IntelliJ IDEA, Eclipse, NetBeans)
+.idea/
+*.iml
+*.ipr
+*.iws
+*.project
+*.classpath
+.settings/
+bin/
+ 
+# VSCode settings
+.vscode/
+ 
+# OS-specific
+.DS_Store
+Thumbs.db
+ 
+# JAR/WAR/EAR/etc.
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+ 
+# Maven wrapper files
+mvnw
+mvnw.cmd
+ 
+# Other
+hs_err_pid*
+*.exe
+ 
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+ 
+# BlueJ files
+*.ctxt
+ 
+# Allure/Report directories
+allure-report/
+allure-results/
+ 
+# Cucumber reports
+cucumber-html-reports/
+cucumber-reports/
+report.html
+ 
+# Test output
+test-output/
