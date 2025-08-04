@@ -2,49 +2,60 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>pro.project</groupId>
-	<artifactId>SWAN_Project</artifactId>
+
+	<groupId>com.gspann</groupId>
+	<artifactId>CucumberJava</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
+		<!-- Cucumber core -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>7.10.0</version>
 		</dependency>
+
+		<!-- TestNG integration -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.10.0</version>
 		</dependency>
+
+		<!-- TestNG itself -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.7.0</version>
 		</dependency>
-		<!--  (Optional) Selenium included if testing UIs  -->
+
+		<!-- Selenium for browser testing -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.25.0</version>
 		</dependency>
+
+		<!-- Dependency injection support -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>7.18.1</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.2.5</version>
 				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
 					<parallel>methods</parallel>
-					<threadCount>2</threadCount>
-					<perCoreThreadCount>false</perCoreThreadCount>
 					<properties>
 						<property>
 							<name>dataproviderthreadcount</name>
@@ -55,5 +66,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
