@@ -26,6 +26,7 @@ public class WebDriverFactory {
 		if (TLDriver.get() == null) {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(10));
 			TLDriver.set(driver);
 		}
 	}
