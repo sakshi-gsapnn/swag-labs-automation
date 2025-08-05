@@ -30,10 +30,11 @@ public class CheckoutTwoSteps {
 				"Expected to be on checkout complete page but was: " + currentUrl);
 	}
 
+	
 	@When("I click menu button")
 	public void iClickmenubutton() throws InterruptedException {
 		WebDriverFactory.getCheckout_TwoDriver().clickmenubutton();
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 	}
 
 	@And("I click Allpages")
@@ -52,7 +53,7 @@ public class CheckoutTwoSteps {
 		WebDriverFactory.getCheckout_TwoDriver().clickonlogout();
 	}
 
-	@And("I click ResetAppState")
+	@And("I click on Reset App State on CheckoutTwo Page")
 	public void iClickonResetAppstate() {
 		WebDriverFactory.getCheckout_TwoDriver().clickResetApp();
 	}

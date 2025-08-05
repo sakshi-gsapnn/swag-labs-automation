@@ -29,7 +29,7 @@ Scenario: Getting to the Your Cart page via cart icon from the Checkout Two page
   Scenario: Getting to the Inventory page  from the Checkout Two page
   When I click menu button
   And  I click Allpages
-  Then I will go to the inventory item page of that product
+  Then I will go back to the Inventory page
   
   Scenario: Getting to the Main Website from the Checkout Two page
   When I click menu button
@@ -40,6 +40,12 @@ Scenario: Getting to the Your Cart page via cart icon from the Checkout Two page
   When I click menu button
   And I click Logout
   Then I will go to login page
+  
+  Scenario: Verify cart is empty after i click on Reset App State
+  When I click menu button  
+  And  I click on Reset App State on CheckoutTwo Page
+  When I click cart icon
+  Then the cart will be empty
   
  
   
