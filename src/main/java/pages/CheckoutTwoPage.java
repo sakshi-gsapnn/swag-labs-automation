@@ -13,6 +13,8 @@ public class CheckoutTwoPage {
 	private By About = By.id("about_sidebar_link");
 	private By logoutbtn = By.id("logout_sidebar_link");
 	private By ResetAppState = By.id("reset_sidebar_link");
+	
+	
 
 	public void clickFinish() {
 		WebDriverFactory.getDriver().findElement(finishButton).click();
@@ -32,7 +34,7 @@ public class CheckoutTwoPage {
 
 	public void clickonAllitems() throws InterruptedException {
 		WebDriverFactory.getDriver().findElement(allItems).click();
-		Thread.sleep(7000);
+		
 	}
 
 	public void clickonAbout() {
