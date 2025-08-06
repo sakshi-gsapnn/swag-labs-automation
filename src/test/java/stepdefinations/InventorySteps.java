@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import driver.WebDriverFactory;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -101,5 +102,65 @@ public class InventorySteps {
 		driver.close();
 		driver.switchTo().window(originalHandle);
 	}
+	//(testing meanu option)
+		@When ("i click on meanu icon")
+		public void ClickMeanu() {
+			WebDriverFactory.getInventoryItemPageDriver().meanuButton();;
+		}
+		 @Then("meanu options displayed")
+		 public void displayOptions() {
+			 WebDriverFactory.getInventoryItemPageDriver().menuOptions();
+		 }
+		  //testing about button
+		 @And ("click About button")
+		 public void ClickAbout() throws InterruptedException {
+		 WebDriverFactory.getInventoryItemPageDriver().AboutOptions();
+		 Thread.sleep(5000);
+	 }
+		 @Then("about page must be open")
+		 public void OpeanAboutPage() {
+			 //System.out.println(WebDriverFactory.getDriver().getCurrentUrl());
+			 Assert.assertTrue(driver.getCurrentUrl().contains("saucelabs"), "about does not opean");
+		 }
+		 //testing logout button
+		 @When("click on meanu icon")
+		 public void Clickmeanu() {
+			WebDriverFactory.getInventoryItemPageDriver().meanuButton();
+			
+	 }
+		@And("click on logout")
+		public void clickLogout() {
+			WebDriverFactory.getInventoryItemPageDriver().LoggoutButton();
+		}
+		@Then("page must be loggedout")
+		public void testLogout() {
+			Assert.assertTrue(driver.getCurrentUrl().contains("saucedemo"));
+		}
+		//testing carticon
+		@When("click on carticon")
+		public void ClickCarticon() {
+			WebDriverFactory.getInventoryItemPageDriver().AddCartIcon();
+		}
+		@Then("it must redirect to checkoutPage")
+		public void testCartIcon() {
+			Assert.assertTrue(driver.getCurrentUrl().contains("cart"));
+		}
+		//checking cartIcon
+		@When("click on cartIcon")
+		public void ClickcartSymboll() {
+			WebDriverFactory.getInventoryItemPageDriver().AddCartIcon();
+		}
+		@And("i click on continue shopping button")
+		public void ClickContinueShoppingButton() {
+			WebDriverFactory.getInventoryItemPageDriver().ContinueShoppingbutton();
+		}
+		@Then("i redirect to inventoryPage")
+		public void testContinueShoppingBTN() {
+			Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
+		}
 
-}
+	}
+
+	
+
+

@@ -44,7 +44,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -52,9 +51,13 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.2.5</version>
 				<configuration>
-					<suiteXmlFiles>
+					<includes>
+						<include>**/TestNGRunner.java</include>
+						<include>**/*Runner.java</include>
+					</includes>
+					<!--					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
+					</suiteXmlFiles>-->
 					<parallel>methods</parallel>
 					<properties>
 						<property>
@@ -67,3 +70,5 @@
 		</plugins>
 	</build>
 </project>
+
+	
